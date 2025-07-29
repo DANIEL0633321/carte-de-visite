@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carte de Visite - ALOHOU Daniel</title>
+  <style>
+    :root {
+      --bg-light: #f8f9fa;
+      --bg-dark: #121212;
+      --text-light: #ffffff;
+      --text-dark: #000000;
+      --accent: #007bff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      transition: 0.3s;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    img.avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid var(--accent);
+    }
+
+    h1 {
+      margin-bottom: 0.2rem;
+    }
+
+    p.role {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .section {
+      margin: 1.5rem 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      display: block;
+      margin: 6px 0;
+      font-weight: 500;
+    }
+
+    .contact-button {
+      background-color: var(--accent);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .language-switch {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      img.avatar {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="main">
+    <img src="image/dani-img.jpg" alt="ALOHOU Daniel" class="avatar">
+    <h1>ALOHOU Daniel</h1>
+    <p class="role">Programmeur informatique & Consultant Digital</p>
+
+    <!-- 📞 Numéros de téléphone -->
+    <div class="section">
+      <strong>📞 Téléphones :</strong>
+      <a href="tel:+2290191092691">📱 MTN : +229 01 91 09 26 91</a>
+      <a href="agdanielpower@gmail.com">✉️ Email</a>
+    </div>
+
+    <!-- 🌐 Réseaux sociaux -->
+    <div class="section">
+      <strong>🌍 Réseaux :</strong>
+      <a href="https://wa.me/2290191092691" target="_blank">💬 WhatsApp</a>
+      <a href="https://www.facebook.com/G.D.P.Alohou" target="_blank">📘 Facebook</a>
+    </div>
+
+    <!-- 📁 VCF -->
+    <div class="section">
+      <a href="ALOHOU Daniel-contact.vcf" class="contact-button" download>📁 Ajouter à vos contacts</a>
+    </div>
+
+    <!-- 🌍 Langue -->
+    <div class="language-switch">
+      <p>🇬🇧 Need English? <a href="#" onclick="switchToEnglish(event)">Switch to English</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Thème sombre auto
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.body.classList.add("dark-mode");
+    }
+
+    // Contenu anglais
+    function switchToEnglish(event) {
+      event.preventDefault();
+      document.getElementById("main").innerHTML = `
+        <img src="dani-img" alt="ALOHOU Daniel" class="avatar">
+        <h1>ALOHOU Daniel</h1>
+        <p class="role">Programmeur informatique & Consultant Digital</p>
+
+        <div class="section">
+          <strong>📞 Phone Numbers:</strong>
+          <a href="tel:+2290191092691">📱 MTN: +229 01 91 09 26 91</a>
+          <a href="agdanielpower@gmail.com">✉️ Email</a>
+        </div>
+
+        <div class="section">
+          <strong>🌍 Socials:</strong>
+          <a href="https://wa.me/2290191092691" target="_blank">💬 WhatsApp</a>
+          <a href="https://www.facebook.com/G.D.P.Alohou" target="_blank">📘 Facebook</a>
+        </div>
+
+        <div class="section">
+          <a href="ALOHOU-Daniel-contact.vcf" class="contact-button" download>📁 Add to Contacts</a>
+        </div>
+
+        <div class="language-switch">
+          <p>🇫🇷 En français ? <a href="#" onclick="location.reload()">Revenir au français</a></p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
